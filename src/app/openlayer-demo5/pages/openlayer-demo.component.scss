@@ -1,0 +1,19 @@
+.ol-popup {
+    position: absolute;
+    background-color: blue;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    bottom: 10px;
+    left: -50px;
+    width: 280px;
+}
+
+#marker {
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+    border-radius: 10px;
+    opacity: 0.5;
+    background-color: #0ff;
+}
