@@ -1,0 +1,11 @@
+<div style="display: flex;">
+  <div style="width:50%">
+    <label>半径大小</label>
+    <nz-slider [(ngModel)]="banjdx" (ngModelChange)="banjdxChange($event)" [nzMax]="50" [nzMin]="1"></nz-slider>
+  </div>
+  <div style="width:50%">
+    <label>模糊半径</label>
+    <nz-slider [(ngModel)]="mhbj" (ngModelChange)="mhbjChange($event)" [nzMax]="50" [nzMin]="1"></nz-slider>
+  </div>
+</div>
+<div id="map"></div>
