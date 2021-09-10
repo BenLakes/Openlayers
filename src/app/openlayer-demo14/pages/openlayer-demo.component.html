@@ -1,0 +1,10 @@
+<div style="display: flex;">
+  <select [(ngModel)]="selectValue" (ngModelChange)="selectChange($event)">
+    <option value="degrees">度</option>
+    <option value="imperial">英制英尺</option>
+    <option value="us">美制英尺</option>
+    <option value="nautical">海里</option>
+    <option value="metric" selected>公制</option>
+  </select>
+</div>
+<div id="map"></div>

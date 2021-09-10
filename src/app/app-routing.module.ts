@@ -21,6 +21,7 @@ import { RouterModule, Routes } from '@angular/router';
   {path:'openlayerDemo11', loadChildren: ()=>import('./openlayer-demo11/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
   {path:'openlayerDemo12', loadChildren: ()=>import('./openlayer-demo12/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
   {path:'openlayerDemo13', loadChildren: ()=>import('./openlayer-demo13/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
+  {path:'openlayerDemo14', loadChildren: ()=>import('./openlayer-demo14/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
