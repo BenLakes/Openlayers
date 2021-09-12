@@ -1,6 +1,7 @@
+<div id="mouse-position"></div>
 <form>
     <label>投影</label>
-    <nz-select [(ngModel)]="selectValue" name="selectValue" nzPlaceHolder="-请选择坐标系-" nzAllowClear>
+    <nz-select (ngModelChange)="selectChange($event)" [(ngModel)]="selectValue" name="selectValue" nzPlaceHolder="-请选择坐标系-" nzAllowClear>
       <nz-option
         nzLabel="EPSG:4326"
         nzValue="EPSG:4326"
@@ -14,7 +15,7 @@
     </nz-select>
     <div style="margin-left: 6px;"></div>
     <label>精度</label>
-    <nz-input-number [(ngModel)]="inputNumber" name="num" id="num"  [nzPlaceHolder]="'Please'"></nz-input-number>
+    <nz-input-number (ngModelChange)="inputNumChange($event)" [(ngModel)]="inputNumber" name="num" id="num"  [nzPlaceHolder]="'Please'"></nz-input-number>
 </form>
 <div id="map"></div>
 

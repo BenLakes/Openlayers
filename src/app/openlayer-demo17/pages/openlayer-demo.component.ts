@@ -10,8 +10,10 @@ export class OpanlayerDemoComponent implements OnInit {
 
   op:any;
 
-  selectValue:any = null;
+  selectValue:any = "EPSG:4326";
   inputNumber:any = 0;
+  overviewMapControl:any = null;
+  mousePositionControl:any = null;
 
   constructor() { 
   }
@@ -28,7 +30,7 @@ export class OpanlayerDemoComponent implements OnInit {
         source: new ol.source.OSM()
       })
     //  配置 缩小地图
-      let overviewMapControl = new ol.control.OverviewMap({
+      this.overviewMapControl = new ol.control.OverviewMap({
         className: 'ol-overviewmap ol-custom-overviewmap',
         layers: [
           new ol.layer.Tile({
@@ -48,13 +50,24 @@ export class OpanlayerDemoComponent implements OnInit {
         center: [0, 0],
         zoom: 1
       })
+
+      // 鼠标位置监听
+      this.mousePositionControl = new ol.control.MousePosition({
+        coordinateFormat: ol.coordinate.createStringXY(4),
+        projection: 'EPSG:4326',
+        target: document.getElementById("mouse-positon")
+      })
   
       //Map 对象
       this.op = new ol.Map({
         controls: ol.control.defaults().extend([
           new ol.control.FullScreen(),
           new ol.control.ScaleLine(),
-          overviewMapControl,
+          this.overviewMapControl,
+          this.mousePositionControl
+        ]),
+        interactions: ol.interaction.defaults().extend([
+          new ol.interaction.DragRotateAndZoom()
         ]),
         //  layer 地图图层
          layers: [layA],
@@ -66,5 +79,16 @@ export class OpanlayerDemoComponent implements OnInit {
        })
     },1000)
    
+  }
+
+  selectChange(e:any){
+    console.log(e)
+    this.mousePositionControl.setProjection(e)
+  }
+
+  inputNumChange(e:any) {
+    console.log(e);
+    let format = ol.coordinate.createStringXY(e);
+    this.mousePositionControl.setCoordinateFormat(format)
   }
 }
