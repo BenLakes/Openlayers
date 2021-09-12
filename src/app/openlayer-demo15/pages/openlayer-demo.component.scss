@@ -1,0 +1,17 @@
+.mapcontainer {
+    position: relative;
+    margin-bottom: 20px;
+}
+.map {
+    width: 1000px;
+    height: 600px;
+    ::ng-deep .ol-attribution {
+        bottom: 30px;
+        right: 50px;
+      }
+  
+}
+
+::ng-deep .ol-zoomslider{
+    top: 100px;
+  }

@@ -34,9 +34,16 @@ export class OpanlayerDemoComponent implements OnInit {
       })
   
       //Map 对象
-       let map = new ol.Map({
+      this.op = new ol.Map({
         controls: ol.control.defaults().extend([
-          this.scaleLineControl
+          new ol.control.FullScreen(),
+          new ol.control.ScaleLine(),
+          new ol.control.ZoomToExtent({
+            extent: [
+              813079.7791264898, 5929220.284081122,
+              848966.9639063801, 5936863.986909639
+            ]
+          })
         ]),
         //  layer 地图图层
          layers: [layA],
@@ -50,8 +57,9 @@ export class OpanlayerDemoComponent implements OnInit {
     },1000)
    
   }
-
-  selectChange(e:any){
-    this.scaleLineControl.setUnits(e)
+  // 添加鼠标缩放
+  addMouse(e: any){
+    console.log(e);
+    this.op.addControl(new ol.control.ZoomSlider());
   }
 }

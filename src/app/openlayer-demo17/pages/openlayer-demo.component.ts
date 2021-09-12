@@ -9,8 +9,10 @@ declare const ol: any;
 export class OpanlayerDemoComponent implements OnInit {
 
   op:any;
+
   selectValue:any = null;
-  scaleLineControl:any;
+  inputNumber:any = 0;
+
   constructor() { 
   }
 
@@ -21,10 +23,24 @@ export class OpanlayerDemoComponent implements OnInit {
   ngAfterViewInit(){
     console.log("页面初始化成功");
     setTimeout(() => {
-      this.scaleLineControl = new ol.control.ScaleLine();
       let layA = new ol.layer.Tile({
         preload: Infinity,
         source: new ol.source.OSM()
+      })
+    //  配置 缩小地图
+      let overviewMapControl = new ol.control.OverviewMap({
+        className: 'ol-overviewmap ol-custom-overviewmap',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM({
+              'url': 'https://{a-c}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png' +
+                '?apikey=0e6fc415256d4fbb9b5166a718591d71'
+            })
+          })
+        ],
+        collapseLabel: '\u00BB',
+        label: '\u00AB',
+        collapsed: false
       })
   
   
@@ -34,24 +50,21 @@ export class OpanlayerDemoComponent implements OnInit {
       })
   
       //Map 对象
-       let map = new ol.Map({
+      this.op = new ol.Map({
         controls: ol.control.defaults().extend([
-          this.scaleLineControl
+          new ol.control.FullScreen(),
+          new ol.control.ScaleLine(),
+          overviewMapControl,
         ]),
         //  layer 地图图层
          layers: [layA],
         //map 对象映射 到 div  target 作为参数，值为id
         //  target: this.ele.nativeElement,
          target: 'map',
-  
         //视图 贴在图层上的一些信息
         view: view
        })
     },1000)
    
-  }
-
-  selectChange(e:any){
-    this.scaleLineControl.setUnits(e)
   }
 }

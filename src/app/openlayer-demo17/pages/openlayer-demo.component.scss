@@ -1,0 +1,44 @@
+.mapcontainer {
+    position: relative;
+    margin-bottom: 20px;
+}
+.map {
+    width: 1000px;
+    height: 600px;
+    ::ng-deep .ol-attribution {
+        bottom: 30px;
+        right: 50px;
+      }
+  
+}
+
+::ng-deep .ol-zoomslider{
+    top: 100px;
+  }
+::ng-deep .ol-custom-overviewmap,
+.ol-custom-overviewmap.ol-uncollapsible {
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: 50px;
+}
+
+::ng-deep .ol-custom-overviewmap:not(.ol-collapsed) {
+    border: 1px solid black;
+  }
+
+  ::ng-deep .ol-custom-overviewmap .ol-overviewmap-map {
+    border: none;
+    width: 300px;
+  }
+
+  ::ng-deep .ol-custom-overviewmap .ol-overviewmap-box {
+    border: 2px solid red;
+  }
+
+  ::ng-deep .ol-custom-overviewmap:not(.ol-collapsed) button {
+    bottom: auto;
+    left: auto;
+    right: 10px;
+    top: 10px;
+  }

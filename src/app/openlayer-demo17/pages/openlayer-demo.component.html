@@ -1,0 +1,20 @@
+<form>
+    <label>投影</label>
+    <nz-select [(ngModel)]="selectValue" name="selectValue" nzPlaceHolder="-请选择坐标系-" nzAllowClear>
+      <nz-option
+        nzLabel="EPSG:4326"
+        nzValue="EPSG:4326"
+        >
+      </nz-option>
+      <nz-option
+      nzLabel="EPSG:3857"
+      nzValue="EPSG:3857"
+      >
+    </nz-option>
+    </nz-select>
+    <div style="margin-left: 6px;"></div>
+    <label>精度</label>
+    <nz-input-number [(ngModel)]="inputNumber" name="num" id="num"  [nzPlaceHolder]="'Please'"></nz-input-number>
+</form>
+<div id="map"></div>
+
