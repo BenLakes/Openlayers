@@ -1,0 +1,29 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [116.38094329833984, 39.923614501953125]
+        },
+        "properties": {
+          "AREA": 0,
+          "PERIMETER": 0,
+          "PINYIN": "Beijing"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [117.20349884033203, 39.1311187744146]
+        },
+        "properties": {
+          "AREA": 0,
+          "PERIMETER": 0,
+          "PINYIN": "天津"
+        }
+      }
+    ]
+  }

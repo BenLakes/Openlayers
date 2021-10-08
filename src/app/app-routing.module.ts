@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
  const routes: Routes = [
   // Routes 是路由配置，告诉路由器 什么样的url 要显示怎么样的视图
   // 这个路由会把一个与空路径 完全匹配的 URL 重定向 到 /dashboard
+  {path: '', redirectTo: 'openlayerRouter', pathMatch:'full'},
   {path:'openlayerDemo1', loadChildren: ()=>import('./openlayer-demo1/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
   {path:'openlayerDemo2', loadChildren: ()=>import('./openlayer-demo2/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
   {path:'openlayerDemo3', loadChildren: ()=>import('./openlayer-demo3/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
@@ -25,6 +26,11 @@ import { RouterModule, Routes } from '@angular/router';
   {path:'openlayerDemo15', loadChildren: ()=>import('./openlayer-demo15/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
   {path:'openlayerDemo16', loadChildren: ()=>import('./openlayer-demo16/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
   {path:'openlayerDemo17', loadChildren: ()=>import('./openlayer-demo17/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
+  {path:'openlayerRouter', loadChildren: ()=>import('./openlayer-router/openlayer-router.module').then(module => module.OpenlayerRouterModule)},
+  {path:'bk-openlayer01', loadChildren: ()=>import('./bk-openlayer-demo01/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
+  {path:'bk-openlayer02', loadChildren: ()=>import('./bk-openlayer-demo02/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
+  {path:'bk-openlayer03', loadChildren: ()=>import('./bk-openlayer-demo03/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
+  {path:'bk-openlayer04', loadChildren: ()=>import('./bk-openlayer-demo04/openlayer-demo.module').then(module => module.OpenlayerDemoModule)},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,11 @@
+<div style="display: flex; justify-content: space-around;">
+    <div id="map" style="height: 400px; width: 600px;"></div>
+    <div id="map2" style="height: 400px; width: 600px;"></div>
+</div>
+<button nz-button (click)="zoomIn($event)">放大</button>
+<button nz-button (click)="zoomOut($event)">缩小</button>
+<button nz-button (click)="toLeft($event)">左移</button>
+<button nz-button (click)="toRight($event)">右移</button>
+<button nz-button (click)="toTop($event)">上移</button>
+<button nz-button (click)="topBottom($event)">下移</button>
+<button nz-button (click)="topBeijing($event)">平移至北京</button>
